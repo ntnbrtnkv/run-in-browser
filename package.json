@@ -1,11 +1,14 @@
 {
   "name": "reveal.js-run-in-browser",
-  "version": "1.0.0",
-  "main": "dist/index.js",
+  "version": "1.0.2",
+  "main": "dist/revealjs-run-in-browser.js",
   "license": "MIT",
   "directories": {
     "lib": "./dist"
   },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "rollup": "^2.18.0",
