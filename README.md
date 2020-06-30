@@ -1,4 +1,8 @@
-# RunInBrowser
+# Run In Browser
+
+[![npm](https://img.shields.io/npm/dy/reveal.js-run-in-browser)](https://www.npmjs.com/package/reveal.js-run-in-browser)
+
+---
 
 A plugin for [Reveal.js](https://revealjs.com), that allows to execute js code right in browser
 
