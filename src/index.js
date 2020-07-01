@@ -9,8 +9,8 @@ const Plugin = () => {
       wrapper.classList.add("codeblock");
       codeblock.parentNode.insertBefore(wrapper, codeblock);
       wrapper.appendChild(codeblock);
-			let button = document.createElement("button");
-			button.innerHTML = 'Run';
+      let button = document.createElement("button");
+      button.innerHTML = "Run";
       wrapper.insertBefore(button, codeblock);
     };
 
@@ -21,14 +21,13 @@ const Plugin = () => {
       ) {
         return;
       } else if (!codeblock.parentNode.classList.contains("codeblock")) {
-          buildStructure(codeblock);
-        
+        buildStructure(codeblock);
       }
     });
 
     let clipboard = new ClipboardJS(".codeblock > button", {
       target: function (trigger) {
-        return trigger.nextElementSibling;
+        return trigger.nextElementSibling.firstChild;
       },
     });
 
