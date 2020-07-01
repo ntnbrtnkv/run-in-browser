@@ -31,10 +31,5 @@
   },
   "peerDependencies": {
     "reveal.js": "^4.0.2"
-  },
-  "release-it": {
-    "npm": {
-      "publish": false
-    }
   }
 }
