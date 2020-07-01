@@ -11,6 +11,7 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.10.3",
+    "release-it": "^13.6.4",
     "rollup": "^2.18.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -22,12 +23,18 @@
   "scripts": {
     "start": "rollup -c --watch",
     "build": "rollup -c",
-    "clean": "rm ./dist/*"
+    "clean": "rm ./dist/*",
+    "release": "release-it"
   },
   "dependencies": {
     "clipboard": "^2.0.6"
   },
   "peerDependencies": {
     "reveal.js": "^4.0.2"
+  },
+  "release-it": {
+    "npm": {
+      "publish": false
+    }
   }
 }
