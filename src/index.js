@@ -5,13 +5,10 @@ import "./styles.css";
 const Plugin = () => {
   const getCodeBlocks = function (codeblocks) {
     const buildStructure = function (codeblock) {
-      let wrapper = document.createElement("div");
-      wrapper.classList.add("codeblock");
-      codeblock.parentNode.insertBefore(wrapper, codeblock);
-      wrapper.appendChild(codeblock);
       let button = document.createElement("button");
+      button.className = "run-code";
       button.innerHTML = "Run";
-      wrapper.insertBefore(button, codeblock);
+      codeblock.appendChild(button);
     };
 
     codeblocks.forEach((codeblock) => {
@@ -25,9 +22,9 @@ const Plugin = () => {
       }
     });
 
-    let clipboard = new ClipboardJS(".codeblock > button", {
+    let clipboard = new ClipboardJS(".run-code", {
       target: function (trigger) {
-        return trigger.nextElementSibling.firstChild;
+        return trigger.parentElement.firstChild;
       },
     });
 

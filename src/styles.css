@@ -1,16 +1,5 @@
-.codeblock {
-  margin: 20px auto;
-  position: relative;
-}
-
-.codeblock pre {
-  margin: 0;
-  width: 100%;
-  font-size: 1.5rem;
-}
-
-.codeblock > button {
-  opacity: 0.5;
+.run-code {
+  opacity: 0.3;
   z-index: 1;
   display: block;
   position: absolute;
@@ -20,11 +9,16 @@
   margin: 0;
   padding: 0.2em 0.5em;
   font-family: inherit;
-  font-size: 1.5rem;
+  font-size: 100%;
   user-select: none;
   cursor: pointer;
+  transition: all ease-in-out 200ms;
 }
 
-.pdf-page .codeblock > button {
+.run-code:hover {
+  opacity: 1;
+}
+
+.pdf-page .run-code {
   display: none;
 }

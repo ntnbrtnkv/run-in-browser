@@ -2981,6 +2981,11 @@ reusify@^1.0.4:
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
   integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
 
+reveal.js@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/reveal.js/-/reveal.js-4.0.2.tgz#2e5e9f8ed0fa239924b448f21d4238c5aa6e852e"
+  integrity sha512-LWZSUenufF1gpD7npxJ7KfoQQFKgc1D6XrLTFgKlwWNP1BQ74hT48KONFWMAw+8R/QUeaScCLCLrBVHDfFIEiw==
+
 rgb-regex@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/rgb-regex/-/rgb-regex-1.0.1.tgz#c0e0d6882df0e23be254a475e8edd41915feaeb1"
