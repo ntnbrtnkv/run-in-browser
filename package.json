@@ -1,6 +1,21 @@
 {
   "name": "reveal.js-run-in-browser",
   "version": "1.2.0",
+  "keywords": [
+    "reveal.js",
+    "plugin",
+    "reveal-js-plugin",
+    "code",
+    "run",
+    "execute",
+    "browser",
+    "javascript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ntnbrtnkv/run-in-browser.git"
+  },
+  "homepage": "https://github.com/ntnbrtnkv/run-in-browser#readme",
   "main": "dist/revealjs-run-in-browser.js",
   "license": "MIT",
   "directories": {
@@ -29,12 +44,5 @@
   },
   "dependencies": {
     "clipboard": "^2.0.6"
-  },
-  "release-it": {
-    "npm": {
-      "publishConfig": {
-        "registry": "https://registry.npmjs.org/"
-      }
-    }
   }
 }
