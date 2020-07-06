@@ -21,6 +21,7 @@
         <h3>for Reveal.js</h3><br>
         <pre><code class="hljs javascript" data-line-numbers data-trim>
                     alert('It works!');
+                    alert(error);
                 </code></pre>
       </section>
       <section>
@@ -50,7 +51,16 @@
       plugins: [
         RunInBrowser,
         RevealHighlight
-      ]
+      ],
+      'run-in-browser': {
+        run: cb => {
+          try {
+            cb()
+          } catch (e) {
+            alert(e)
+          }
+        }
+      }
     });
   </script>
 </body>

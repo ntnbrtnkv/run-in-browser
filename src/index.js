@@ -3,11 +3,13 @@ import ClipboardJS from "clipboard";
 import "./styles.css";
 
 const Plugin = () => {
+  let options;
+
   const getCodeBlocks = function (codeblocks) {
     const buildStructure = function (codeblock) {
       let button = document.createElement("button");
       button.className = "run-code";
-      button.innerHTML = "Run";
+      button.innerHTML = options.text;
       codeblock.appendChild(button);
     };
 
@@ -30,11 +32,21 @@ const Plugin = () => {
 
     clipboard.on("success", function (e) {
       e.clearSelection();
-      eval(e.text);
+      options.run(() => eval(e.text));
     });
   };
 
   const init = function (deck) {
+    const defaultOptions = {
+      run: (cb) => cb(),
+      text: "&#9654;"
+    };
+
+    options = {
+      ...defaultOptions,
+      ...deck.getConfig()["run-in-browser"],
+    };
+
     let codeblocks = deck.getRevealElement().querySelectorAll("pre");
 
     if (codeblocks.length > 0) {
