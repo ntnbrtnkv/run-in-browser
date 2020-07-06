@@ -1,5 +1,5 @@
 .run-code {
-  opacity: 0.3;
+  opacity: 0.1;
   z-index: 1;
   display: block;
   position: absolute;
@@ -10,12 +10,12 @@
   padding: 0.2em 0.5em;
   font-family: inherit;
   font-size: 100%;
-  user-select: none;
   cursor: pointer;
   transition: all ease-in-out 200ms;
 }
 
-.run-code:hover {
+.run-code:hover,
+.run-code:focus {
   opacity: 1;
 }
 
