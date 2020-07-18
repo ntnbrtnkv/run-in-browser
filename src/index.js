@@ -2,6 +2,8 @@ import ClipboardJS from "clipboard";
 
 import "./styles.css";
 
+const CURRENT_FRAGMENT_SELECTOR = '.current-fragment';
+
 const Plugin = () => {
   let options;
 
@@ -26,7 +28,8 @@ const Plugin = () => {
 
     let clipboard = new ClipboardJS(".run-code", {
       target: function (trigger) {
-        return trigger.parentElement.firstChild;
+        const curFragment = trigger.parentElement.querySelector(CURRENT_FRAGMENT_SELECTOR);
+        return curFragment ? curFragment : trigger.parentElement.firstChild;
       },
     });
 
