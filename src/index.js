@@ -6,6 +6,7 @@ const CURRENT_FRAGMENT_SELECTOR = '.current-fragment';
 
 const Plugin = () => {
   let options;
+  let deck;
 
   const getCodeBlocks = function (codeblocks) {
     const buildStructure = function (codeblock) {
@@ -35,15 +36,18 @@ const Plugin = () => {
 
     clipboard.on("success", function (e) {
       e.clearSelection();
-      options.run(() => eval(e.text));
+      const code = e.text;
+      options.run({cb: (passedCode) => eval(passedCode || code), deck, code });
     });
   };
 
-  const init = function (deck) {
+  const init = function (reveal) {
     const defaultOptions = {
       run: (cb) => cb(),
       text: "&#9654;"
     };
+
+    deck = reveal;
 
     options = {
       ...defaultOptions,

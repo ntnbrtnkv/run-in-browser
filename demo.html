@@ -45,19 +45,27 @@
   <script src="node_modules/reveal.js/dist/reveal.js"></script>
   <script src="dist/revealjs-run-in-browser.js"></script>
   <script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="node_modules/reveal.js/plugin/notes/notes.js"></script>
   <script>
     Reveal.initialize({
       transition: "convex",
       plugins: [
         RunInBrowser,
+        RevealNotes,
         RevealHighlight
       ],
       'run-in-browser': {
-        run: cb => {
+        run: ({ cb, code, deck }) => {
+          const isNotes = deck.isSpeakerNotes();
+          const _alert = isNotes ? window.parent.opener.alert : alert;
+          const refinedCode = isNotes
+            ? code
+              .replace(/alert\(/g, 'window.parent.opener.alert(')
+            : code;
           try {
-            cb()
+            cb(refinedCode);
           } catch (e) {
-            alert(e)
+            _alert(e);
           }
         }
       }
